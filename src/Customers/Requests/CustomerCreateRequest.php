@@ -15,7 +15,8 @@ class CustomerCreateRequest
         $this->customer = $customer;
     }
 
-    public function getData(){
+    public function getData()
+    {
         $data = $this->customer->toArray();
         unset($data['id']);
         return $data;

@@ -77,8 +77,9 @@ class Customer
 
     public function __construct(array $data = [])
     {
-        if(empty($data))
+        if(empty($data)) {
             return;
+        }
 
         $this->id = isset($data["id"]) ? $data["id"] : null;
         $this->name = $data["name"];
@@ -303,8 +304,9 @@ class Customer
      */
     public function setPreferredPaymentMethod(string $preferredPaymentMethod): void
     {
-        if(!EnumValidator::isValidValue(PaymentMethod::class, $preferredPaymentMethod))
+        if(!EnumValidator::isValidValue(PaymentMethod::class, $preferredPaymentMethod)) {
             throw new \InvalidArgumentException("Wrong enum value");
+        }
 
         $this->preferredPaymentMethod = $preferredPaymentMethod;
     }
@@ -322,8 +324,9 @@ class Customer
      */
     public function setInvoiceLanguage(string $invoiceLanguage): void
     {
-        if(!EnumValidator::isValidValue(Language::class, $invoiceLanguage))
+        if(!EnumValidator::isValidValue(Language::class, $invoiceLanguage)) {
             throw new \InvalidArgumentException("Wrong enum value");
+        }
 
         $this->invoiceLanguage = $invoiceLanguage;
     }

@@ -31,8 +31,9 @@ class Address
 
     public function __construct(array $data = [])
     {
-        if(empty($data))
+        if(empty($data)) {
             return;
+        }
 
         $this->street = $data["street"];
         $this->city = $data["city"];
@@ -101,8 +102,9 @@ class Address
      */
     public function setCountry(string $country): void
     {
-        if(!EnumValidator::isValidValue(Country::class, $country))
+        if(!EnumValidator::isValidValue(Country::class, $country)) {
             throw new \InvalidArgumentException("Wrong enum value");
+        }
 
         $this->country = $country;
     }

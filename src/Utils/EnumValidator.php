@@ -8,10 +8,11 @@ use Ojasek\IuctoSdk\Enums\Enum;
 
 class EnumValidator
 {
-    public static function isValidValue($enumClass, $value){
+    public static function isValidValue($enumClass, $value)
+    {
         $enumInstance = new $enumClass();
-        if($enumInstance instanceof Enum){
-            if(in_array($value, $enumInstance::getValues())){
+        if($enumInstance instanceof Enum) {
+            if(in_array($value, $enumInstance::getValues())) {
                 return true;
             }
             return false;

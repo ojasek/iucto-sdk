@@ -10,6 +10,7 @@ class ModelsList
 
     /**
      * ModelsList constructor.
+     *
      * @param $class
      * @param $data
      */
